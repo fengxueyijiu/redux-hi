@@ -4,27 +4,15 @@ import PostBody from './PostBody';
 import './App.css'
  
  class App extends React.Component {
-  constructor() {
-     super()
-     this.addComment = this.addComment.bind(this)
-   }
-   state = {
-     comments: ['hello1', 'hello2']
-   }
-   addComment(newComment) {
-     this.setState({
-     comments: [...this.state.comments, newComment]
-     })
-   }
    render() {
      return(
 
        <div className="App">
         <div className="top  clearfix">
-         <PostBody comments={this.state.comments}/>
+         <PostBody />
         </div>
         <div className="bottom  clearfix">
-         <CommentBox comments={this.state.comments} addComment={this.addComment} />
+         <CommentBox />
         </div>
        </div>
      )

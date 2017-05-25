@@ -16,13 +16,12 @@ import React from 'react'
    
    	const content = this.textInput.value
    	console.log(content)
-     // this.setState({ comments: [...this.state.comments, content] })
+     this.setState({ comments: [...this.state.comments, content] })
      this.refs.commentForm.reset()
-     this.props.addComment(content)
 
    }
    render() {
-   	let commentsList = this.props.comments.map((item) => (
+   	let commentsList = this.state.comments.map((item) => (
        <div className="comment" key={Math.random()}>{item}</div>
      ))
      return(
@@ -30,7 +29,7 @@ import React from 'react'
        <div className="comment-box">
          {commentsList}
          <form ref="commentForm" className="comment-form" onSubmit={this.handleSubmit}>
-           <input type="text" className="input" ref={(value) => { this.textInput = value}}/>
+           <input type="text" className="input" ref={(val) => { this.textInput = val}}/>
            <button type="submit" className="submit-btn" >提交</button>
          </form>
          <div className="underline"></div>

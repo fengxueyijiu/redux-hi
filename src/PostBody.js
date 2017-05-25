@@ -5,7 +5,7 @@ import React from 'react'
      return(
        <div className="post-body">
          <div className="comment-num">
-           {this.props.comments.length}
+           24
          </div>
        </div>
      )
